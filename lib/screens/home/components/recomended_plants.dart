@@ -19,11 +19,16 @@ class RecomendedPlants extends StatelessWidget {
             country: "Russian",
             price: 440,
             press: () {
-              // Navigator.of(context).push(
-              //   MaterialPageRoute(
-              //     builder: (context) => const DetailScreen(),
-              //   ),
-              // );
+              Future.delayed(
+                const Duration(seconds: 3),
+                () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const DetailScreen(),
+                    ),
+                  );
+                },
+              );
             },
           ),
           RecomendedPlantCard(
@@ -32,10 +37,15 @@ class RecomendedPlants extends StatelessWidget {
             country: "Russian",
             price: 440,
             press: () {
-              // Navigator.of(context).push(
-              //   MaterialPageRoute(
-              //     builder: (context) => const DetailScreen(),
-              //   ),
+              // Future.delayed(
+              //   const Duration(seconds: 2),
+              //   () {
+              //     Navigator.of(context).push(
+              //       MaterialPageRoute(
+              //         builder: (context) => const DetailScreen(),
+              //       ),
+              //     );
+              //   },
               // );
             },
           ),
@@ -45,10 +55,15 @@ class RecomendedPlants extends StatelessWidget {
             country: "Russian",
             price: 440,
             press: () {
-              // Navigator.of(context).push(
-              //   MaterialPageRoute(
-              //     builder: (context) => const DetailScreen(),
-              //   ),
+              // Future.delayed(
+              //   const Duration(seconds: 1),
+              //   () {
+              //     Navigator.of(context).push(
+              //       MaterialPageRoute(
+              //         builder: (context) => const DetailScreen(),
+              //       ),
+              //     );
+              //   },
               // );
             },
           ),

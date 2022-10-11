@@ -85,9 +85,10 @@ class RecomendedPlantCard extends StatelessWidget {
       child: Column(
         children: <Widget>[
           Image.asset(image),
-          ElevatedButton(
-            onPressed: press(),
+          GestureDetector(
+            onTap: press(),
             child: Container(
+              width: 162,
               padding: EdgeInsets.all(kDefaultPadding / 2),
               decoration: BoxDecoration(
                 color: Colors.white,

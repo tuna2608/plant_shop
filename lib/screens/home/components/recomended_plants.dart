@@ -18,54 +18,18 @@ class RecomendedPlants extends StatelessWidget {
             title: "Samantha",
             country: "Russian",
             price: 440,
-            press: () {
-              Future.delayed(
-                const Duration(seconds: 3),
-                () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => const DetailScreen(),
-                    ),
-                  );
-                },
-              );
-            },
           ),
           RecomendedPlantCard(
             image: "assets/images/image_2.png",
             title: "Angelica",
             country: "Russian",
             price: 440,
-            press: () {
-              // Future.delayed(
-              //   const Duration(seconds: 2),
-              //   () {
-              //     Navigator.of(context).push(
-              //       MaterialPageRoute(
-              //         builder: (context) => const DetailScreen(),
-              //       ),
-              //     );
-              //   },
-              // );
-            },
           ),
           RecomendedPlantCard(
             image: "assets/images/image_3.png",
             title: "Samantha",
             country: "Russian",
             price: 440,
-            press: () {
-              // Future.delayed(
-              //   const Duration(seconds: 1),
-              //   () {
-              //     Navigator.of(context).push(
-              //       MaterialPageRoute(
-              //         builder: (context) => const DetailScreen(),
-              //       ),
-              //     );
-              //   },
-              // );
-            },
           ),
         ],
       ),
@@ -80,29 +44,36 @@ class RecomendedPlantCard extends StatelessWidget {
     required this.title,
     required this.country,
     required this.price,
-    required this.press,
   }) : super(key: key);
 
   final String image, title, country;
   final int price;
-  final Function press;
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return Container(
-      margin: EdgeInsets.only(
-        left: kDefaultPadding,
-        top: kDefaultPadding / 2,
-        bottom: kDefaultPadding * 2.5,
+    return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        backgroundColor: kBackgroundColor,
       ),
-      width: size.width * 0.4,
-      child: Column(
-        children: <Widget>[
-          Image.asset(image),
-          GestureDetector(
-            onTap: press(),
-            child: Container(
+      onPressed: () {
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => const DetailScreen(),
+          ),
+        );
+      },
+      child: Container(
+        margin: EdgeInsets.only(
+          left: kDefaultPadding,
+          top: kDefaultPadding / 2,
+          bottom: kDefaultPadding * 2.5,
+        ),
+        width: size.width * 0.4,
+        child: Column(
+          children: <Widget>[
+            Image.asset(image),
+            Container(
               width: 162,
               padding: EdgeInsets.all(kDefaultPadding / 2),
               decoration: BoxDecoration(
@@ -148,9 +119,20 @@ class RecomendedPlantCard extends StatelessWidget {
                 ],
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
 }
+
+              // Future.delayed(
+              //   const Duration(seconds: 1),
+              //   () {
+              //     Navigator.of(context).push(
+              //       MaterialPageRoute(
+              //         builder: (context) => const DetailScreen(),
+              //       ),
+              //     );
+              //   },
+              // );
